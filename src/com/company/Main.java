@@ -222,9 +222,11 @@ public class Main {
             for (int j = 0; j < split[i].length(); j++) {
                 char c = split[i].charAt(j);
                 char d = 0;
+                char e = 0;
                 try {
                     d = split[i].charAt(j + 1);
-                } catch (StringIndexOutOfBoundsException e) {
+                    e = split[i].charAt(j + 2);
+                } catch (StringIndexOutOfBoundsException err) {
 
                 }
                 if ((c == 'a') && (d == 'b')) {
@@ -232,6 +234,11 @@ public class Main {
                 }
                 if ((c == 'b') && (d == 'a')) {
                     ba = true;
+                }
+                if ((c == 'b') && (d == 'a') && (e == 'b')) {
+                    ab = false;
+                    ba = false;
+                    break;
                 }
 
             }
